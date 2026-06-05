@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>字体切换测试 - 我的小说</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-size: 30px;
+            line-height: 1.8;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #ebd6ae;
+            color: #202030;
+            transition: font-family 0.2s ease;
+        }
+        h1 {
+            font-size: 48px;
+            margin-top: 1.5em;
+            color: #202030;
+        }
+        h2 {
+            font-size: 42px;
+            color: #202030;
+        }
+        p {
+            margin-bottom: 1.2em;
+        }
+        a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 27px;
+                padding: 1rem;
+            }
+            h1 { font-size: 42px; }
+            h2 { font-size: 36px; }
+        }
+
+        /* 工具栏样式 */
+        .toolbar {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,240,0.95);
+            border-radius: 12px;
+            padding: 12px 16px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            font-size: 14px;
+            font-family: system-ui, sans-serif;
+            z-index: 1000;
+            backdrop-filter: blur(4px);
+            border: 1px solid #ccc;
+        }
+        .toolbar button {
+            margin: 4px;
+            padding: 6px 12px;
+            background: #f0f0f0;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        .toolbar button:hover {
+            background: #e0e0e0;
+        }
+        .toolbar .active {
+            background: #0366d6;
+            color: white;
+            border-color: #0366d6;
+        }
+        hr {
+            margin: 1.5em 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="toolbar">
+    <strong>🔤 切换字体</strong><br>
+    <button data-font="system">系统默认</button>
+    <button data-font="georgia">Georgia (衬线)</button>
+    <button data-font="literata">Literata (阅读优化)</button>
+    <button data-font="noto-serif">思源宋体</button>
+    <button data-font="yahei">微软雅黑/苹方</button>
+    <button data-font="mono">等宽字体</button>
+</div>
+
+<h1>第一章 迷雾开端</h1>
+<p>天色昏暗，浓雾如游魂般缠绕着废弃的码头。林深裹紧风衣，脚步踩在湿滑的木板上发出吱呀声。他手里攥着一张泛黄的照片，照片上的人脸已经模糊不清。</p>
+<p>“你来了。”一个沙哑的声音从雾中传来。</p>
+<p>林深停下脚步，右手不动声色地摸向腰间的匕首。雾气在他面前缓缓分开，露出一个佝偻的身影……</p>
+<p>他深吸一口气，向前迈出一步。脚下的木板发出不堪重负的呻吟，仿佛随时会碎裂。但他没有犹豫，因为他知道，答案就在迷雾深处。</p>
+<hr>
+<p><a href="#">← 返回目录</a> | <a href="#">下一章 →</a></p>
+
+<script>
+    // 字体映射表
+    const fontMap = {
+        system: `system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif`,
+        georgia: `'Georgia', 'Times New Roman', Times, serif`,
+        literata: `'Literata', 'Georgia', 'Times New Roman', serif`,
+        'noto-serif': `'Noto Serif SC', 'Times New Roman', serif`,
+        yahei: `'Noto Sans CJK SC', 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Helvetica, Arial, sans-serif`,
+        mono: `'Fira Code', 'Cascadia Code', 'Courier New', monospace`
+    };
+
+    // 动态加载思源宋体 (如果用户从未访问过 Google Fonts)
+    function loadNotoSerif() {
+        if (!document.querySelector('link[href*="Noto+Serif+SC"]')) {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap';
+            document.head.appendChild(link);
+        }
+    }
+
+    // 切换字体
+    function setFont(fontKey) {
+        let fontFamily = fontMap[fontKey];
+        if (!fontFamily) return;
+        if (fontKey === 'noto-serif') loadNotoSerif();
+        document.body.style.fontFamily = fontFamily;
+        // 高亮当前按钮
+        document.querySelectorAll('.toolbar button').forEach(btn => {
+            if (btn.getAttribute('data-font') === fontKey) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+    }
+
+    // 绑定按钮事件
+    document.querySelectorAll('.toolbar button').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const fontKey = btn.getAttribute('data-font');
+            setFont(fontKey);
+        });
+    });
+
+    // 默认激活“系统默认”
+    setFont('system');
+</script>
+</body>
+</html>

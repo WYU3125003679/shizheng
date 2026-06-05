@@ -1,33 +1,59 @@
 ---
 ---
-
 @import "{{ site.theme }}";
 
-/* 自定义字体大小和阅读区域 */
+/* 自定义样式：暖色背景，深灰文字，微软雅黑字体，大字号 */
 body {
-  font-size: 18px !important;
-  line-height: 1.8 !important;
-  max-width: 860px !important;
-  margin: 0 auto !important;
-  padding: 2rem !important;
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  line-height: 1.8;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #ebd6ae;
+  color: #202030;
 }
 
-/* 标题字体 */
-h1 { font-size: 28px !important; }
-h2 { font-size: 24px !important; }
-h3 { font-size: 20px !important; }
+h1, h2, h3, h4, h5, h6 {
+  color: #202030;
+}
 
-/* 代码块（如果小说中有代码示例） */
-pre, code {
-  font-size: 15px !important;
+h1 {
+  font-size: 48px;
+  margin-top: 1.5em;
+}
+
+h2 {
+  font-size: 42px;
+}
+
+h3 {
+  font-size: 36px;
+}
+
+p {
+  margin-bottom: 1.2em;
+}
+
+a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 /* 移动端适配 */
 @media (max-width: 600px) {
   body {
-    font-size: 16px !important;
-    padding: 1rem !important;
+    font-size: 27px;
+    padding: 1rem;
   }
-  h1 { font-size: 24px !important; }
-  h2 { font-size: 20px !important; }
+  h1 {
+    font-size: 42px;
+  }
+  h2 {
+    font-size: 36px;
+  }
 }
