@@ -1,0 +1,33 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* 自定义字体大小和阅读区域 */
+body {
+  font-size: 18px !important;
+  line-height: 1.8 !important;
+  max-width: 860px !important;
+  margin: 0 auto !important;
+  padding: 2rem !important;
+}
+
+/* 标题字体 */
+h1 { font-size: 28px !important; }
+h2 { font-size: 24px !important; }
+h3 { font-size: 20px !important; }
+
+/* 代码块（如果小说中有代码示例） */
+pre, code {
+  font-size: 15px !important;
+}
+
+/* 移动端适配 */
+@media (max-width: 600px) {
+  body {
+    font-size: 16px !important;
+    padding: 1rem !important;
+  }
+  h1 { font-size: 24px !important; }
+  h2 { font-size: 20px !important; }
+}
