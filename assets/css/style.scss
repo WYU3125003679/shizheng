@@ -62,3 +62,10 @@ a:hover {
 header, footer {
   display: none !important;
 }
+
+main, .main-content, .wrapper, .container, article {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  float: none !important;
+  clear: both !important;
+}
