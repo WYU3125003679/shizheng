@@ -58,6 +58,7 @@ a:hover {
   }
 }
 
-header {
+/* 隐藏全局 header 和 footer */
+header, footer {
   display: none !important;
 }

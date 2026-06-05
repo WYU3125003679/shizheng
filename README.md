@@ -1,5 +1,7 @@
 <style>
-  /* 仅针对目录页重置自定义样式，恢复 GitHub 默认风格 */
+  header, footer {
+    display: block !important;
+  }
   body {
     background-color: white !important;
     color: #24292e !important;
@@ -8,18 +10,12 @@
     line-height: 1.5 !important;
     max-width: none !important;
     padding: 2rem !important;
-    margin: 0 auto !important;
   }
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3 {
     color: #24292e !important;
   }
   h1 { font-size: 2em !important; }
   h2 { font-size: 1.5em !important; }
-  /* 如果之前隐藏了 header，这里恢复显示 */
-  header {
-    display: block !important;
-  }
-  /* 其他你不想在目录页生效的自定义规则都可以在这里重置 */
 </style>
 
 
