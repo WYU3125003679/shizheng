@@ -1,3 +1,28 @@
+<style>
+  /* 仅针对目录页重置自定义样式，恢复 GitHub 默认风格 */
+  body {
+    background-color: white !important;
+    color: #24292e !important;
+    font-size: 16px !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important;
+    line-height: 1.5 !important;
+    max-width: none !important;
+    padding: 2rem !important;
+    margin: 0 auto !important;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: #24292e !important;
+  }
+  h1 { font-size: 2em !important; }
+  h2 { font-size: 1.5em !important; }
+  /* 如果之前隐藏了 header，这里恢复显示 */
+  header {
+    display: block !important;
+  }
+  /* 其他你不想在目录页生效的自定义规则都可以在这里重置 */
+</style>
+
+
 # 我的小说：《时证》
 
 > 不定期更新 | 作者：氨鹌安
