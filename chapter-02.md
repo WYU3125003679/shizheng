@@ -1023,3 +1023,6 @@ Do mi na~ An ge ro ru mu~ Sa ru be~
 [下一章(未开始)]
 
 [<- 返回目录](README.md)
+
+
+<script src="/shizheng/js/reading-progress.js"></script>
