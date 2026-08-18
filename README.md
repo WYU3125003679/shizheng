@@ -1,24 +1,3 @@
-<style>
-  header, footer {
-    display: block !important;
-  }
-  body {
-    background-color: white !important;
-    color: #24292e !important;
-    font-size: 16px !important;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important;
-    line-height: 1.5 !important;
-    max-width: none !important;
-    padding: 2rem !important;
-  }
-  h1, h2, h3 {
-    color: #24292e !important;
-  }
-  h1 { font-size: 2em !important; }
-  h2 { font-size: 1.5em !important; }
-</style>
-
-
 # 我的小说：《时证》
 
 > 不定期更新 | 作者：氨鹌安
